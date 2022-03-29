@@ -19,7 +19,7 @@ class LondonCityAirportAPI:
 
     def getFlights(self, direction, status=None):
         res = requests.get(url=self.getUrl(direction=direction))
-        flights = json.loads(res.text)['flights']
+        flights = res.json()['flights']
 
         if status is not None:
             return getByStatus(flights, status)

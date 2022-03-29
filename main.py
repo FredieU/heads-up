@@ -1,8 +1,10 @@
 from lca_api import LondonCityAirportAPI
+from utils import formatData
 import pprint
 
 if __name__ == '__main__':
     api = LondonCityAirportAPI()
     pp = pprint.PrettyPrinter(indent=2)
-    pp.pprint(api.getArrivals())
-    # pp.pprint(api.getDepartures())
+    # data = api.getArrivals()
+    data = api.getDepartures()
+    print(formatData(data))
